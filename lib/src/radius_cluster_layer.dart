@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/src/options/popup_options_impl.dart';
 import 'package:flutter_map_radius_cluster/src/splay/cluster_splay_delegate.dart';
 import 'package:flutter_map_radius_cluster/src/splay/spread_cluster_splay_delegate.dart';
@@ -110,7 +110,7 @@ class RadiusClusterLayer extends StatelessWidget {
   final AnchorPos clusterAnchorPos;
 
   const RadiusClusterLayer({
-    Key? key,
+    super.key,
     required this.search,
     required this.clusterBuilder,
     this.controller,
@@ -142,8 +142,7 @@ class RadiusClusterLayer extends StatelessWidget {
         assert(
           initialClustersAndMarkers == null || initialCenter != null,
           'If initialClustersAndMarkers is provided initialCenter is required.',
-        ),
-        super(key: key);
+        );
 
   @override
   Widget build(BuildContext context) {

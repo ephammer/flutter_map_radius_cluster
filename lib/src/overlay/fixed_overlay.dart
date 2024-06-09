@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/src/controller/radius_cluster_controller.dart';
 import 'package:flutter_map_radius_cluster/src/map_camera_extension.dart';
 
@@ -12,11 +12,11 @@ class FixedOverlay extends StatelessWidget {
   final FixedOverlayBuilder searchButtonBuilder;
 
   const FixedOverlay({
-    Key? key,
+    super.key,
     required this.camera,
     required this.controller,
     required this.searchButtonBuilder,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

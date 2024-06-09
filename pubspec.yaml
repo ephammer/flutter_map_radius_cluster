@@ -1,7 +1,7 @@
 name: flutter_map_radius_cluster
 description: A marker clustering plugin for flutter_map which displays markers in a given radius.
 version: 3.1.0-dev.1
-
+publish_to: none
 homepage: https://github.com/rorystephenson/flutter_map_radius_cluster
 
 environment:
@@ -12,13 +12,16 @@ dependencies:
   flutter:
     sdk: flutter
   async: ^2.11.0
-  flutter_map: ^6.0.0-dev.1
-  flutter_map_marker_popup: ^5.3.0-dev.1
+  flutter_map: ^7.0.1
+  flutter_map_marker_popup:
+    git:
+      url: https://github.com/marcelo-soares-souza/flutter_map_marker_popup.git
+      ref: fix-compatibility-with-flutter-map-7
   latlong2: ^0.9.0
   supercluster: ^3.0.1
 
 dev_dependencies:
-  flutter_lints: ^2.0.2
+  flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
 

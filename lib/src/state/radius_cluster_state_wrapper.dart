@@ -7,8 +7,7 @@ class RadiusClusterStateWrapper extends StatelessWidget {
   final Widget Function(
       BuildContext context, RadiusClusterState radiusClusterState) builder;
 
-  const RadiusClusterStateWrapper({Key? key, required this.builder})
-      : super(key: key);
+  const RadiusClusterStateWrapper({super.key, required this.builder});
 
   @override
   Widget build(BuildContext context) {

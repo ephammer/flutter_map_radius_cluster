@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/src/anchor_util.dart';
 import 'package:flutter_map_radius_cluster/src/layer_element_extension.dart';
 import 'package:flutter_map_radius_cluster/src/map_camera_extension.dart';
@@ -23,7 +23,7 @@ class ClusterWidget extends StatelessWidget {
     required this.builder,
     required this.onTap,
     required this.size,
-    required Anchor anchor,
+    required Alignment anchor,
   })  : position = AnchorUtil.removeAnchor(
           camera.getPixelOffset(cluster.latLng),
           size.width,

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/src/layer_element_extension.dart';
 import 'package:flutter_map_radius_cluster/src/map_camera_extension.dart';
 import 'package:flutter_map_radius_cluster/src/radius_cluster_layer.dart';
@@ -66,7 +66,7 @@ class ExpandedCluster {
 
   List<DisplacedMarkerOffset> displacedMarkerOffsets(
     MapCamera camera,
-    CustomPoint clusterPosition,
+    Point clusterPosition,
   ) =>
       clusterSplayDelegate.displacedMarkerOffsets(
         displacedMarkers,

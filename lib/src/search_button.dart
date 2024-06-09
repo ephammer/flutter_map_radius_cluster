@@ -51,7 +51,7 @@ class SearchButton extends StatelessWidget {
       case RadiusSearchNextSearchState.error:
         return ElevatedButton(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.red),
+            backgroundColor: WidgetStateProperty.all(Colors.red),
           ),
           onPressed: radiusClusterController.searchAtCenter,
           child: const Text(searchAgainText),

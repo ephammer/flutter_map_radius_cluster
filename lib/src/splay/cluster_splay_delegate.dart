@@ -1,5 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/flutter_map_radius_cluster.dart';
 import 'package:latlong2/latlong.dart';
 
@@ -25,16 +27,16 @@ abstract class ClusterSplayDelegate {
   List<DisplacedMarker> displaceMarkers(
     List<Marker> markers, {
     required LatLng clusterPosition,
-    required CustomPoint Function(LatLng latLng) project,
-    required LatLng Function(CustomPoint point) unproject,
+    required Point Function(LatLng latLng) project,
+    required LatLng Function(Point point) unproject,
   });
 
   /// Calculate the marker offsets at the given [animationProgress].
   List<DisplacedMarkerOffset> displacedMarkerOffsets(
     List<DisplacedMarker> displacedMarkers,
     double animationProgress,
-    CustomPoint<num> Function(LatLng point) getPixelOffset,
-    CustomPoint clusterPosition,
+    Point<num> Function(LatLng point) getPixelOffset,
+    Point clusterPosition,
   );
 
   /// Create an optional decoration such as lines from the markers to the

@@ -1,5 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_popup/extension_api.dart';
 import 'package:flutter_map_radius_cluster/src/cluster_widget.dart';
 import 'package:flutter_map_radius_cluster/src/layer_element_extension.dart';
@@ -18,7 +20,7 @@ class ExpandableClusterWidget extends StatelessWidget {
   final Widget Function(BuildContext, Marker) markerBuilder;
   final void Function(PopupSpec popupSpec) onMarkerTap;
   final VoidCallback onCollapse;
-  final CustomPoint clusterPixelPosition;
+  final Point clusterPixelPosition;
 
   ExpandableClusterWidget({
     Key? key,

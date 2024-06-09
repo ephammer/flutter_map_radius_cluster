@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/src/state/inherited_radius_cluster_scope.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:supercluster/supercluster.dart';
@@ -13,11 +13,11 @@ class RadiusClusterScope extends StatefulWidget {
   final Widget child;
 
   const RadiusClusterScope({
-    Key? key,
+    super.key,
     this.initialCenter,
     this.initialClustersAndMarkers,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   State<RadiusClusterScope> createState() => _RadiusClusterScopeState();

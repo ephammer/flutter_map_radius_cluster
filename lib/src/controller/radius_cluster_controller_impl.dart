@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/src/controller/marker_matcher.dart';
 import 'package:flutter_map_radius_cluster/src/controller/radius_cluster_event.dart';
 import 'package:latlong2/latlong.dart';

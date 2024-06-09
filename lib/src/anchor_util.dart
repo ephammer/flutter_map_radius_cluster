@@ -1,7 +1,5 @@
 import 'dart:math';
 
-import 'package:flutter_map/plugin_api.dart';
-
 class AnchorUtil {
   static Point<double> removeAnchor(
     Point pos,

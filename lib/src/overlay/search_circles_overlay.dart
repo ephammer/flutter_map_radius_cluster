@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/src/options/search_circle_style.dart';
 import 'package:flutter_map_radius_cluster/src/options/search_circle_styles.dart';
 import 'package:flutter_map_radius_cluster/src/state/radius_cluster_state.dart';
@@ -12,11 +12,11 @@ class SearchCirclesOverlay extends StatelessWidget {
   final SearchCircleStyles options;
 
   const SearchCirclesOverlay({
-    Key? key,
+    super.key,
     required this.camera,
     required this.radiusInM,
     required this.options,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

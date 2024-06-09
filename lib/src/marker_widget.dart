@@ -1,9 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_map/plugin_api.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/src/anchor_util.dart';
-import 'package:flutter_map_radius_cluster/src/map_camera_extension.dart';
 import 'package:flutter_map_radius_cluster/src/splay/displaced_marker.dart';
 
 class MarkerWidget extends StatelessWidget {
@@ -38,9 +37,9 @@ class MarkerWidget extends StatelessWidget {
         removeRotateOrigin = false;
 
   MarkerWidget.displaced({
-    Key? key,
+    super.key,
     required DisplacedMarker displacedMarker,
-    required CustomPoint position,
+    required Point position,
     required this.markerBuilder,
     required this.onTap,
     required this.mapRotationRad,
@@ -52,8 +51,7 @@ class MarkerWidget extends StatelessWidget {
           displacedMarker.anchor,
         ),
         rotateAlignment = DisplacedMarker.rotateAlignment,
-        removeRotateOrigin = true,
-        super(key: key);
+        removeRotateOrigin = true;
 
   @override
   Widget build(BuildContext context) {
