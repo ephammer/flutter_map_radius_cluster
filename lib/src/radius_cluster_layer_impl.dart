@@ -48,10 +48,10 @@ class RadiusClusterLayerImpl extends StatefulWidget {
   final PopupOptionsImpl? popupOptions;
   final Size clusterWidgetSize;
   final ClusterSplayDelegate clusterSplayDelegate;
-  final Anchor clusterAnchor;
+  final Alignment clusterAnchor;
 
   RadiusClusterLayerImpl({
-    Key? key,
+    super.key,
     required this.camera,
     required this.search,
     required this.clusterBuilder,
@@ -68,8 +68,7 @@ class RadiusClusterLayerImpl extends StatefulWidget {
     required this.clusterWidgetSize,
     required this.clusterSplayDelegate,
     required this.clusterAnchor,
-  })  : stream = mapController.mapEventStream,
-        super(key: key);
+  }) : stream = mapController.mapEventStream;
 
   @override
   State<RadiusClusterLayerImpl> createState() => _RadiusClusterLayerImplState();

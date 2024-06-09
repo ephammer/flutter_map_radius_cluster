@@ -14,9 +14,6 @@ class PopupSpecBuilder {
         namespace: RadiusClusterLayer.popupNamespace,
         marker: displacedMarker.marker,
         markerPointOverride: displacedMarker.displacedPoint,
-        markerRotateAlignmentOveride: DisplacedMarker.rotateAlignment,
-        removeMarkerRotateOrigin: true,
-        markerAnchorOverride: displacedMarker.anchor,
         removeIfZoomLessThan: lowestZoom,
       );
 

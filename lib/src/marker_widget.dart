@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_radius_cluster/src/anchor_util.dart';
+import 'package:flutter_map_radius_cluster/src/map_camera_extension.dart';
 import 'package:flutter_map_radius_cluster/src/splay/displaced_marker.dart';
 
 class MarkerWidget extends StatelessWidget {
@@ -26,14 +27,9 @@ class MarkerWidget extends StatelessWidget {
           camera.getPixelOffset(marker.point),
           marker.width,
           marker.height,
-          marker.anchor ??
-              Anchor.fromPos(
-                AnchorPos.defaultAnchorPos,
-                marker.width,
-                marker.height,
-              ),
+          marker.alignment ?? Alignment(marker.width, marker.height),
         ),
-        rotateAlignment = marker.rotateAlignment,
+        rotateAlignment = marker.alignment,
         removeRotateOrigin = false;
 
   MarkerWidget.displaced({
@@ -71,7 +67,7 @@ class MarkerWidget extends StatelessWidget {
           ? child
           : Transform.rotate(
               angle: -mapRotationRad,
-              origin: removeRotateOrigin ? null : marker.rotateOrigin,
+              // origin: removeRotateOrigin ? null : marker.ro,
               alignment: rotateAlignment,
               child: child,
             ),

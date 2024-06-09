@@ -20,7 +20,7 @@ extension MapCameraExtension on MapCamera {
     );
   }
 
-  CustomPoint<num> get sizeChangeDueToRotation => size - nonRotatedSize;
+  Point<num> get sizeChangeDueToRotation => size - nonRotatedSize;
 
   /// Returns true if the current map position is outside of the boundary of the
   /// previous search as defined by the [previousSearchCenter] and [radiusInKm].

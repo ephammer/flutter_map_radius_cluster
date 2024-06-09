@@ -16,7 +16,7 @@ class ExpandableClusterWidget extends StatelessWidget {
   final ExpandedCluster expandedCluster;
   final ClusterWidgetBuilder builder;
   final Size size;
-  final Anchor anchor;
+  final Alignment anchor;
   final Widget Function(BuildContext, Marker) markerBuilder;
   final void Function(PopupSpec popupSpec) onMarkerTap;
   final VoidCallback onCollapse;

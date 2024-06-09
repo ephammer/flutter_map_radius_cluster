@@ -3,7 +3,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 class DisplacedMarker {
-  static const anchorPos = AnchorPos.align(AnchorAlign.center);
+  static const anchorPos = Alignment.center;
 
   final Marker marker;
   final LatLng displacedPoint;
@@ -17,8 +17,8 @@ class DisplacedMarker {
 
   static const AlignmentGeometry rotateAlignment = Alignment.center;
 
-  Anchor get anchor => Anchor.fromPos(
-        anchorPos,
+  Alignment get anchor => Alignment(
+        // anchorPos,
         marker.width,
         marker.height,
       );

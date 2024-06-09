@@ -20,7 +20,7 @@ class ClusteredElementLayer extends StatelessWidget {
   final ClusterWidgetBuilder clusterBuilder;
   final void Function(PopupSpec popupSpec) onMarkerTap;
   final void Function(ImmutableLayerCluster<Marker> cluster) onClusterTap;
-  final Anchor clusterAnchor;
+  final Alignment clusterAnchor;
 
   const ClusteredElementLayer({
     super.key,
@@ -94,7 +94,7 @@ class ClusteredElementLayer extends StatelessWidget {
     final marker = layerPoint.originalPoint;
 
     final markerBuilder = !selected
-        ? marker.builder
+        ? (context) => marker.child
         : (context) => popupOptions!.selectedMarkerBuilder!(context, marker);
 
     return MarkerWidget(
@@ -120,11 +120,11 @@ class ClusteredElementLayer extends StatelessWidget {
     final selectedMarkerBuilder = popupOptions?.selectedMarkerBuilder;
     final Widget Function(BuildContext context, Marker marker) markerBuilder =
         selectedMarkerBuilder == null
-            ? ((context, marker) => marker.builder(context))
+            ? ((context, marker) => marker.child)
             : ((context, marker) =>
                 popupState?.selectedMarkers.contains(marker) == true
                     ? selectedMarkerBuilder(context, marker)
-                    : marker.builder(context));
+                    : marker.child);
 
     return ExpandableClusterWidget(
       camera: camera,

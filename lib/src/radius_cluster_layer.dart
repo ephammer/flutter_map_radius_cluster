@@ -104,10 +104,10 @@ class RadiusClusterLayer extends StatelessWidget {
     'This method has been renamed to clusterAnchorPos for clarity. '
     'This method is deprecated since v3.1.0',
   )
-  final AnchorPos? anchorPos;
+  final Alignment? anchorPos;
 
   /// Cluster anchor position.
-  final AnchorPos clusterAnchorPos;
+  final Alignment clusterAnchorPos;
 
   const RadiusClusterLayer({
     super.key,
@@ -137,7 +137,7 @@ class RadiusClusterLayer extends StatelessWidget {
       splayLineOptions: SplayLineOptions(),
     ),
     this.anchorPos,
-    this.clusterAnchorPos = AnchorPos.defaultAnchorPos,
+    this.clusterAnchorPos = Alignment.center,
   })  : searchCircleStyles = searchCircleOptions ?? searchCircleStyles,
         assert(
           initialClustersAndMarkers == null || initialCenter != null,
@@ -146,9 +146,9 @@ class RadiusClusterLayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final clusterAnchor = Anchor.fromPos(
+    final clusterAnchor = Alignment(
       // ignore: deprecated_member_use_from_same_package
-      anchorPos ?? clusterAnchorPos,
+      // anchorPos ?? clusterAnchorPos,
       clusterWidgetSize.width,
       clusterWidgetSize.height,
     );
